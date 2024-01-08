@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Cinzel&family=Diphylleia&family=Fredoka:wght@300&family=Monoton&family=Quicksand&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Nothing+You+Could+Do&family=Roboto:ital,wght@1,100&family=Tangerine&display=swap');
+
+
+
+.TaskItem{
+    font-family: 'Fredoka', sans-serif;
+    letter-spacing: 2px;
+    line-height: 0.8cm;
+    width: 47%;
+   
+}
+.Header{
+    font-family: 'Cinzel', sans-serif;
+    font-weight: 600;
+    letter-spacing: 4px;
+    
+}
+
+input, textarea{
+    font-family:Quicksand;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 70vh;
+    border: solid 1px rgb(187, 187, 211);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 4px;
+    
+    padding: 15px;
+}
+.label{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media (max-width: 500px) {
+    input ,textarea {
+        width:50vh;
+       
+      
+    }
+}
+@media (min-width: 500px) {
+    .main-container{
+        justify-content: center;
+    }
+}
+.quote{
+    text-align: center;
+    font-weight: 600;
+    font-size: x-large;
+    text-wrap: wrap;
+    width: 70vh;
+    color: rgb(189, 189, 204);
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 3px;
+}
+
+

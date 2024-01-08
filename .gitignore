@@ -1,0 +1,47 @@
+# Ignore Node modules in the server folder
+server/node_modules/
+
+# Ignore environment files in the server folder
+server/.env
+
+# Ignore build output
+server/dist/
+server/build/
+
+# Ignore logs
+server/logs/
+server/*.log
+
+# Ignore MongoDB data
+server/data/
+
+# Ignore Visual Studio Code specific files
+server/.vscode/
+
+#frontend
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+task_manager/node_modules
+task_manager/.pnp
+.pnp.js
+
+# testing
+task_manager/coverage
+
+# production
+task_manager/build
+
+# misc
+task_manager/.DS_Store
+task_manager/.env.local
+task_manager/.env.development.local
+task_manager/.env.test.local
+task_manager/.env.production.local
+
+task_manager/npm-debug.log*
+task_manager/yarn-debug.log*
+task_manager/yarn-error.log*
+
+
