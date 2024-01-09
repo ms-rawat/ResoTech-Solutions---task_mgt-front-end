@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import TaskItem from './components/TaskItem'
-import Header from './components/Header'
 import UpdateData from './components/useContext/UpdateData';
-
 function Home() {
   const [Data, setData] = useState([]);
   const [ItemToBeDeleted,setItemToBeDeleted]=useState('');
+  const [EditAlert,setEditAlert]=useState('')
   
   const updateItemToBeDeleted = (id) => {
     setItemToBeDeleted(id);
   };
 
+  const EditAlertSetter=(value)=>{
+    setEditAlert(value)
+ 
+  }
+  
+
 
 
 
   const fetchTask = async () => {
+
     try {
       const responce = await fetch('http://localhost:8000/api/notes/',
         {
@@ -28,20 +34,19 @@ function Home() {
 
       }
       else {
-        console.log("data could not fetched")
+        document.write("data could not fetched")
       }
 
     }
     catch (error) {
-      console.log(error)
+      document.write(error)
     }
   }
   useEffect(() => {
     fetchTask()
-  }, [])
+  }, [EditAlert])
 
   useEffect(()=>{
-     console.log("from home : "+ItemToBeDeleted)
     const dummyData =Data.filter(item=>item._id!==ItemToBeDeleted)
     setData(dummyData)
 
@@ -49,8 +54,8 @@ function Home() {
   },[ItemToBeDeleted])
   return (
     <div>
-      <Header />
-      <UpdateData.Provider value={{ItemToBeDeleted,updateItemToBeDeleted}}>
+     
+      <UpdateData.Provider value={{updateItemToBeDeleted,EditAlertSetter}}>
         <div className='flex flex-row  flex-wrap flex-grow gap-2 mx-auto justify-center'>
           {Data.map((item, index) => (
             < TaskItem key={index} Data={item} />

@@ -3,8 +3,9 @@ import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { Button } from '@mui/material';
 
 function StatusOfTask({id,change}) {
-       change()
     let UpdateStatus=async()=>{
+      change()
+
         try{
             fetch(`http://localhost:8000/api/notes//Status/${id}`,
             {
@@ -14,11 +15,6 @@ function StatusOfTask({id,change}) {
                     'Content-Type': 'application/json', // Set the content type if applicable
                   },
                 body:JSON.stringify({"status":"Completed"})
-            }).then(res=>{
-                if(res.ok)
-                {   console.log(res.json())
-                   
-                }
             })
         }
         catch(error){

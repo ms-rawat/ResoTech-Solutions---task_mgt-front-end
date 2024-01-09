@@ -1,4 +1,7 @@
 import { createContext } from "react";
 
-const UpdateData = createContext();
+const UpdateData = createContext({
+    ItemToBeDeleted:'',
+    EditAlert:'',
+});
 export default UpdateData;

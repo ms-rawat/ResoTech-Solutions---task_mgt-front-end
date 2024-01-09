@@ -60,7 +60,7 @@ router.get('/', async (req, res, next) => {
 // Update note
 router.put('/update/:id', async (req, res, next) => {
     try {
-        const { title, content,last_date } = req.body;
+        const { title, content,last_date,status } = req.body;
 
         // Title and content validation
         if (!title || !content || !last_date) {
@@ -69,7 +69,7 @@ router.put('/update/:id', async (req, res, next) => {
 
         const updatedNote = await Note.findByIdAndUpdate(
             req.params.id,
-            { title, content,last_date, updatedAt: Date.now() },
+            { title, content,last_date,status, updatedAt: Date.now() },
             { new: true, runValidators: true }
         );
 
@@ -96,7 +96,7 @@ router.delete('/:id', async (req, res, next) => {
 
 //update status
 router.put('/status/:id', async (req, res, next) => {
-    try {
+    try {       
         const { status } = req.body;
 
        

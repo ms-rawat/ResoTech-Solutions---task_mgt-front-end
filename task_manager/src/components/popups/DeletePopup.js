@@ -10,7 +10,7 @@ export default function DeletePopups({id}) {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false)
-      const {ItemToBeDeleted,updateItemToBeDeleted}=useContext(UpdateData);
+      const {updateItemToBeDeleted}=useContext(UpdateData);
     const style = {
         position: 'absolute',
         top: '50%',
@@ -26,7 +26,7 @@ export default function DeletePopups({id}) {
 
 
     const DeleteTask = async (id) => {
-        console.log(id)
+     
         await fetch(`http://localhost:8000/api/notes/${id}`, {
             method: 'delete',
             headers: {
@@ -55,8 +55,8 @@ export default function DeletePopups({id}) {
             >
 
                 <div  style={ style } className=' popup bg-slate-800 text-slate-100 p-5 rounded-md '>
-                    <div className="m-3 mb-7 text-2xl">You want to delete Task?</div>
-                    <div className="flex flex-row gap-5">
+                    <div className="m-3 mb-7 text-2xl" style={{  'letter-spacing': '2px','font-family':'Quicksand'}}>are you sure?</div>
+                    <div className="flex flex-row gap-5 mx-2">
                         <Button variant="outlined"  onClick={() => DeleteTask(id)} > <h5 className="text-slate-100 font-sans text-2xl">yes</h5></Button>
                         <Button   variant="outlined" onClick={handleClose}><h5 className="text-slate-100 font-sans text-2xl">no</h5></Button>
                     </div>

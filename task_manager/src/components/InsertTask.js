@@ -17,7 +17,7 @@ function InsertTask() {
             body:JSON.stringify(values)
         }).then(res=>{
             if(res.ok)
-            {   console.log(res.json())
+            {  
                 let element = document.querySelector('.message');
                 element.innerHTML="task added"
             }
@@ -37,7 +37,6 @@ function InsertTask() {
                 last_date:'',
             },
             onSubmit:(values)=>{
-               console.log(values)
                SendData(values)
             
             }
@@ -45,7 +44,7 @@ function InsertTask() {
     )
   return (
     <div>
-        <div className='flex main-container   mx-auto mt-28'>
+        <div className='flex main-container   mx-auto mt-10 mb-5'>
            
             <form  onSubmit={formik.handleSubmit}>
                 <div className='flex flex-col gap-3 w-fit items-center flex-grow '>
@@ -77,7 +76,7 @@ function InsertTask() {
                 <div className="description flex flex-col">
                     <label htmlFor="content">description</label>
                 <textarea
-                       rows="8" cols="80"
+                       rows="5" cols="80"
                       name='content'
                       placeholder="Desscrition"
                       value={formik.values.content}
@@ -86,7 +85,7 @@ function InsertTask() {
                     ></textarea>
                 </div>
                 <div className="message"></div>
-                <div className='self-center button'><Button type='submit' variant='contained'> submit</Button></div>
+                <div className='self-center button'><Button type='submit' variant='contained'><span style={{  letterSacing: '2px',fontFamily:'Quicksand'}} className='font-semibold '>submit</span> </Button></div>
                 </div>
             </form>
            

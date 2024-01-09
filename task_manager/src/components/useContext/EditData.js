@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const EditData=createContext('');
+const EditData=createContext();
 
 export default EditData
